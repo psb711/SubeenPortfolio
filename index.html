@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/index.css">
+   <link rel="stylesheet" href="./css/reset.css">
+   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <script src="./index.js"></script>
+   <title>박수빈포트폴리오</title>
+</head>
+
+<body>
+   <div class="wrap">
+      <div class="hello1">
+         <p>본페이지는 1920*1080 기준으로 제작되었습니다.</p>
+
+         <div class="imgbox">
+            <img src="./img/hello1.png" alt="hello1">
+            <img src="./img/hello2.png" alt="hello2">
+            <img src="./img/hello3.png" alt="hello3">
+            <img src="./img/hello4.png" alt="hello4">
+            <img src="./img/hello5.png" alt="hello5">
+            <img src="./img/hello6.png" alt="hello6">
+            <img src="./img/hello7.png" alt="hello7">
+
+         </div>
+         <div class="tbox">
+            <P>hello</P>
+         </div>
+      </div>
+      <div class="hello2">
+         <P>Happy</P>
+         <P>to see you!</P>
+         <P> Let the</P>
+         <P> Subeen Time</P>
+
+      </div>
+      <div class="coment">
+         <div class="videobox">
+            <video src="./img/subeenV.mp4" autoplay muted loop playsinline></video>
+         </div>
+
+         <div class="textbox">
+            <div class="txtinnerbox">
+               <div class="pbox OH">
+                  <p>경험을 생각으로, </p>
+                  <p> &nbsp; 생각을 기획으로</p>
+               </div>
+               <div class="OH">
+                  <p id="t1">상상에 그치지 않고 직접 웹 개발을 배우며 구현했던 과정과 <br>
+                     현장에서 소비자와 직접 마주했던 경력을 통해 <br> 반응과 니즈를 파악하고 개선할줄 아는 감각을 가지고있습니다. <br>
+                     이 경험들은 저를 더욱 현실적이고 사용자 중심적인 시선으로 <br>기획하게 만들어주었습니다.</p>
+               </div>
+
+            </div>
+         </div>
+      </div>
+
+
+   </div>
+   <div class="introduce">
+      <h3>My Piece of the Puzzle</h3>
+      <div id="puzzle-container">
+         <h3 id="complete">Puzzle complete!</h3>
+         <div id="pieces">
+            <div class="puzzle-piece" draggable="true" data-id="1"><img src="./img/puzzle1.png" alt="puzzle1"></div>
+            <div class="puzzle-piece" draggable="true" data-id="2"><img src="./img/puzzle2.png" alt="puzzle2"></div>
+            <div class="puzzle-piece" draggable="true" data-id="3"><img src="./img/puzzle3.png" alt="puzzle3"></div>
+            <div class="puzzle-piece" draggable="true" data-id="4"><img src="./img/puzzle4.png" alt="puzzle4"></div>
+         </div>
+
+         <div id="slots">
+            <div class="puzzle-slot" data-accept="1">
+               <img src="./img/puzzleS1.png" alt="puzzle1">
+            </div>
+            <div class="puzzle-slot" data-accept="2">
+               <img src="./img/puzzleS2.png" alt="puzzle2">
+            </div>
+            <div class="puzzle-slot" data-accept="3">
+               <img src="./img/puzzleS3.png" alt="puzzle3">
+            </div>
+            <div class="puzzle-slot" data-accept="4">
+               <img src="./img/puzzleS4.png" alt="puzzle4">
+            </div>
+         </div>
+      </div>
+
+      <!-- 모달 -->
+      <div id="modal">
+         <div id="modal-content">
+
+            <div id="description"></div>
+            <div class="imgbox">이미지</div>
+            <div class="txtbox">설명</div>
+         </div>
+      </div>
+   </div>
+
+
+   <div class="project">
+      <h3>Projects</h3>
+      <div class="arrybox1">
+         <div class="arry">
+            <div class="projectbox">
+               <h4>Starbucks</h4>
+               <div class="project1 projects">
+                  <div class="imgbox">
+                     <img src="./img/project1.png" alt="project1">
+                  </div>
+                  <div class="hoverbox">
+
+
+
+
+                  </div>
+                  <div class="buttonbox">
+                 
+                  
+                        <button onclick="location.href='https://psb711.github.io/project1/'">페이지</button>
+                 
+                         <button onclick="location.href='https://psb711.github.io/project1/starbucks.pdf'">기획문서</button>
+                  </div>
+
+               </div>
+
+               <p>처음만든 프로젝트로, <br>한국의 스타벅스라는 기획의 웹사이트입니다.</p>
+
+            </div>
+            <div class="projectbox">
+               <h4>Nonsan Strawberry Festival</h4>
+               <div class="project2 projects">
+                  <div class="imgbox">
+                     <img src="./img/project2.png" alt="project2">
+                  </div>
+                  <div class="hoverbox">
+
+                   
+                     
+                   
+                  </div>   <div class="buttonbox">
+                     <button onclick="location.href='https://psb711.github.io/project2/'">페이지</button>
+                 
+                         <button onclick="location.href='https://psb711.github.io/project2/nonsan.pdf'">기획문서</button>
+                        </div>
+
+               </div>
+               <p>반응형으로 구현하였으며, <br> 논산딸기축제 사이트를 트렌드에 맞춰 재기획한 웹사이트입니다.</p>
+            </div>
+            <div class="projectbox">
+               <h4>RIDIBooks</h4>
+               <div class="project3 projects">
+                  <div class="imgbox">
+                     <img src="./img/project3.png" alt="project3">
+                  </div>
+                  <div class="hoverbox">
+
+                 
+                  
+                  </div>
+
+                        <div class="buttonbox">
+                         <button onclick="location.href='https://psb711.github.io/project3/'">페이지</button>
+                 
+                         <button onclick="location.href='https://psb711.github.io/project3/lidi.pdf'">기획문서</button>
+                        </div>
+               </div>
+               <p>OpenAI 기반 데이터를 활용하여 <br> 기존 사이트를 클론하고,불편했던 UX 요소를 개선하였습니다. </p>
+            </div>
+            <div class="projectbox">
+               <h4>Park Chef</h4>
+               <div class="project4 projects">
+                  <div class="imgbox">
+                     <img src="./img/project4.png" alt="project4">
+                  </div>
+                  <div class="hoverbox">
+
+                
+                     
+                    
+                  </div>   >
+                        <div class="buttonbox">
+                          <button onclick="location.href='https://psb711.github.io/ParkChef/'">페이지</button>
+                 
+                         <button onclick="location.href='https://psb711.github.io/ParkChef/ParkChef.pdf'">기획문서</button>
+                        </div>
+               </div>
+               <div class="txtbox">
+                  <p>React를 활용하여, <br> 아버지께서 판매하시는 상품을 기반으로 클라이언트를 아버지라고 가정하고 <br>니즈를 반영한 맞춤형 웹사이트를 제작했습니다. </p>
+               </div>
+            </div>
+            <div class="projectbox">
+               <h4>Parket</h4>
+               <div class="project5 projects">
+                  <div class="imgbox">
+                     <img src="./img/project5.png" alt="project5">
+                  </div>
+                  <div class="hoverbox">
+
+                
+                  </div>
+                        <div class="buttonbox">
+                          <button onclick="location.href='https://psb711.github.io/Parket/'">페이지</button>
+                 
+                         <button onclick="location.href='https://psb711.github.io/Parket/Parket.pdf'">기획문서</button>
+                        </div>
+               </div>
+               <p>React를 활용하여,팀으로 진행한 프로젝트입니다<br>히어로섹션,배너슬라이드,정기권조회 구현과 배너제작을 담당하였습니다. </p>
+            </div>
+
+         </div>
+      </div>
+      <div class="arrybox2">
+         <div class="arry">
+            <div class="project1"></div>
+            <div class="project2"></div>
+            <div class="project3"></div>
+            <div class="project4"></div>
+            <div class="project5"></div>
+         </div>
+      </div>
+
+      <div class="skill">
+         <img src="./img/html.jpg" alt="html">
+         <img src="./img/css.jpg" alt="css">
+         <img src="./img/scss.jpg" alt="scss">
+         <img src="./img/jq.jpg" alt="jq">
+         <img src="./img/js.jpg" alt="js">
+         <img src="./img/ps.jpg" alt="ps">
+         <img src="./img/figma.jpg" alt="figma">
+         <img src="./img/react.jpg" alt="react">
+      </div>
+
+   </div>
+
+   </div>
+   <div class="Closing">
+
+      <div class="Closinginnerbox">
+         <div class="textbox">
+
+            <div class="OH">
+               <p>개발자의 언어를 이해하고</p>
+            </div>
+            <div class="OH">
+               <p>소비자의 마음을 함께 고려할 수 있는</p>
+            </div>
+
+            <div class="OH">
+               <p>실행력과 사용자 감각을 겸비한 기획자로 성장 중인</P>
+            </div>
+
+            <div class="OH">
+               <P>박수빈 이였습니다.</p>
+            </div>
+
+
+            <div class="OH">
+               <p>감사합니다</p>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <footer>
+      <div class="copy">
+         <p>
+            COPYRIGHT ⓒ 2025 개발자 박수빈. ALL RIGHTS RESERVED. </p>
+         <p>본 사이트는 개인 포트폴리오 사이트로 제작되어 상업적 목적이 없음을 밝힙니다. <br>
+            사용된 일부 이미지 및 폰트 등은 별도의 출처가 있음을 알립니다.
+         </p>
+      </div>
+
+   </footer>
+
+</body>
+
+</html>

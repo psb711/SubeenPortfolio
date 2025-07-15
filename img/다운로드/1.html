@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 움직이면 이미지도 따라 움직임</title>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #background-image {
+            background: url('http://images.freeimages.com/images/large-previews/08a/street-by-night-1225351.jpg');
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+            min-height: 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="background-image"></div>
+
+    <script>
+        $(document).ready(function () {
+            var pixelToMove = 50;
+            $("#background-image").mousemove(function (e) {
+                var width = $(this).innerWidth();
+                var height = $(this).innerHeight();
+                var newValueX = (e.pageX / width) * pixelToMove;
+                var newValueY = (e.pageY / height) * pixelToMove;
+                $(this).css('background-position', newValueX + '%' + ' ' + newValueY + '%');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

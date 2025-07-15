@@ -1,0 +1,391 @@
+@font-face {
+  font-family: "MyLotteBold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/MyLotteBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.hello1 {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  transition: filter 0.5s ease, opacity 0.5s ease;
+}
+.hello1 p {
+  padding: 20px;
+}
+.hello1 .imgbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+}
+.hello1 .imgbox img {
+  position: absolute;
+  width: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 2s ease, opacity 1s;
+}
+.hello1 .tbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hello1 .tbox p {
+  font-size: 15rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hello2 {
+  z-index: 5;
+  height: 150vh;
+  text-align: center;
+}
+.hello2 p {
+  font-weight: 900;
+  top: 30%;
+  font-size: 10rem;
+  margin: 100px 0;
+}
+
+.coment {
+  position: relative;
+  height: 150vh;
+  display: flex;
+}
+.coment .videobox {
+  width: 50%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.coment .videobox video {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+}
+.coment .textbox {
+  width: 50%;
+  height: 150vh;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.coment .textbox .OH {
+  overflow: hidden;
+}
+.coment .textbox .txtinnerbox {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 7%;
+  justify-content: center;
+}
+.coment .textbox .txtinnerbox p {
+  transform: translate3d(0px, 200%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  font-weight: 500;
+}
+.coment .textbox .txtinnerbox p.visible {
+  transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  font-weight: 500;
+}
+.coment .textbox .pbox {
+  display: flex;
+}
+.coment .textbox .pbox p {
+  font-size: 2.5rem;
+  transition: all 0.9s;
+}
+.coment .textbox #t1 {
+  transition: all 1.5s;
+  font-size: 2rem;
+  text-align: left;
+  line-height: 259%;
+}
+
+.introduce {
+  margin-top: 150px;
+  text-align: center;
+  position: relative;
+  height: 1150px;
+}
+.introduce H3 {
+  font-size: 2.5rem;
+  padding-top: 10px;
+  font-weight: 800;
+}
+.introduce #puzzle-container {
+  position: relative;
+  width: 50%;
+}
+.introduce #pieces,
+.introduce #slots {
+  display: flex;
+}
+.introduce #pieces {
+  position: absolute;
+  top: 90px;
+  left: 269px;
+}
+.introduce .puzzle-piece {
+  width: 200px;
+  height: 200px;
+  cursor: grab;
+  position: relative;
+  z-index: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.introduce .puzzle-piece :hover {
+  transform: scale(1.2);
+}
+.introduce .puzzle-piece img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  pointer-events: auto;
+}
+.introduce #slots {
+  position: relative;
+  top: 299px;
+  left: 233px;
+  height: 50%;
+}
+.introduce .puzzle-slot {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+.introduce .puzzle-slot:nth-child(1) {
+  left: 241px;
+  top: 47px;
+}
+.introduce .puzzle-slot:nth-child(1) img {
+  width: 200px;
+  height: auto;
+}
+.introduce .puzzle-slot:nth-child(2) {
+  left: 391px;
+  top: 81px;
+}
+.introduce .puzzle-slot:nth-child(2) img {
+  height: 200px;
+  width: auto;
+}
+.introduce .puzzle-slot:nth-child(3) {
+  top: 229px;
+  left: 423px;
+}
+.introduce .puzzle-slot:nth-child(3) img {
+  width: 200px;
+  height: auto;
+}
+.introduce .puzzle-slot:nth-child(4) {
+  top: 264px;
+  left: 211px;
+}
+.introduce .puzzle-slot:nth-child(4) img {
+  height: 200px;
+  width: auto;
+}
+.introduce #modal {
+  padding-left: 20px;
+  position: absolute;
+  right: 18%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 604px;
+  background: white;
+  padding: 20px;
+  display: none;
+  color: #333333;
+  line-height: 180%;
+  font-size: 1.2rem;
+  text-align: left;
+}
+.introduce #modal #description {
+  text-align: center;
+}
+.introduce #modal #description h4 {
+  color: rgb(95, 156, 248);
+  font-size: 1.7rem;
+}
+
+#complete {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0s linear 1s;
+  position: absolute;
+  bottom: -311px;
+  left: 32%;
+  font-size: 4.5rem;
+  font-weight: 100;
+}
+
+#complete.show {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+#modal-content .txtbox {
+  margin-left: 60px;
+  font-size: 1.3rem;
+}
+#modal-content .imgbox {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#modal-content .imgbox img {
+  width: 343px;
+}
+
+.project {
+  margin-bottom: 300px;
+  text-align: center;
+}
+.project h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+.project .arrybox1 {
+  width: 100%;
+  overflow: hidden;
+}
+.project .arry {
+  display: flex;
+  justify-content: space-around;
+  width: 200%;
+  animation: slideLeft 10s linear infinite alternate;
+  animation-play-state: running;
+}
+.project .arry:hover {
+  animation-play-state: paused;
+}
+.project .projectbox {
+  width: 15%;
+}
+.project .projectbox h4 {
+  font-size: 1.6rem;
+}
+.project .projectbox p {
+  font-size: 1.2rem;
+  line-height: 150%;
+  margin-top: 50px;
+  text-align: left;
+  color: #333333;
+  margin-left: 20px;
+}
+.project .projects {
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+  position: relative;
+  border: solid 0.1px #a8a8a8;
+}
+.project .projects:hover .hoverbox {
+  display: block;
+}
+.project .projects:hover .imgbox img {
+  transform: translateY(-60%);
+}
+.project .projects img {
+  width: 100%;
+  transition: transform 6s ease;
+}
+.project .hoverbox {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 101%;
+  height: 101%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: none;
+}
+.project .buttonbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.project .buttonbox button {
+  margin: 15px;
+  width: 100px;
+  height: 50px;
+  font-size: 1.1rem;
+  border: none;
+  background-color: rgb(95, 156, 248);
+  color: aliceblue;
+  z-index: 5;
+}
+.project .buttonbox button :hover {
+  transform: scale(1.2);
+}
+.project .skill {
+  margin: 50px;
+}
+.project .skill img {
+  width: 90px;
+}
+
+.Closing {
+  height: 140VH;
+  position: relative;
+}
+.Closing .Closinginnerbox {
+  height: 140vh;
+}
+.Closing .textbox {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 142PX;
+}
+.Closing .textbox p {
+  transform: translate3d(0px, 0PX, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  font-size: 3rem;
+}
+.Closing .textbox p.visible {
+  transform: translate3d(100px, 0PX, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  font-size: 3rem;
+}
+
+footer {
+  padding: 50px;
+}
+footer .copy {
+  text-align: right;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

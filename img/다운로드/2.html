@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 움직이면 이미지 3D로 움직임</title>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #background-image {
+            background: url('http://images.freeimages.com/images/large-previews/08a/street-by-night-1225351.jpg');
+            position: fixed;
+            top: 100px;
+            left: 100px;
+            width: 500px;
+            z-index: 0;
+            min-height: 500px;
+            height: auto;
+            box-shadow: 5px 5px 10px #aaa;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="background-image"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const card = document.querySelector('#background-image');
+            const motionMatchMedia = window.matchMedia('(prefers-reduced-motion)');
+            const buffer = 10;
+
+            function handleHover(e) {
+                const { clientX, clientY, currentTarget } = e;
+                const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
+
+                const horizontalRatio = (clientX - offsetLeft) / clientWidth;
+                const verticalRatio = (clientY - offsetTop) / clientHeight;
+                const xRotation = (buffer / 2 - horizontalRatio * buffer).toFixed(2);
+                const yRotation = (verticalRatio * buffer - buffer / 2).toFixed(2);
+
+                card.style.animation = 'none';
+                card.style.transform = `perspective(${clientWidth}px) rotateX(${yRotation}deg) rotateY(${xRotation}deg) scale3d(1, 1, 1)`;
+            }
+
+            function resetStyles(e) {
+                card.style.transform = `perspective(${e.currentTarget.clientWidth}px) rotateX(0deg) rotateY(0deg)`;
+                card.style.animation = 'rotateAnimation 4.5s linear infinite';
+            }
+
+            if (!motionMatchMedia.matches) {
+                card.addEventListener('mousemove', handleHover);
+                card.addEventListener('mouseleave', resetStyles);
+            }
+        });
+    </script>
+</body>
+
+</html>

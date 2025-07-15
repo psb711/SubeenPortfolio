@@ -1,0 +1,511 @@
+@font-face {
+  font-family: 'MyLotteBold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/MyLotteBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hello1 {
+  p {
+    padding: 20px;
+  }
+
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  transition: filter 0.5s ease,
+  opacity 0.5s ease;
+
+
+  .imgbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+
+
+    img {
+      position: absolute;
+      width: 200px;
+
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 2s ease, opacity 1s;
+    }
+
+
+  }
+
+  .tbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    p {
+      font-size: 15rem;
+
+      opacity: 0; // 처음엔 안보이게
+      transition: opacity 1s ease;
+
+    }
+  }
+}
+
+.hello2 {
+
+  z-index: 5;
+  height: 150vh;
+
+  text-align: center;
+
+
+  p {
+
+    font-weight: 900;
+    top: 30%;
+    font-size: 10rem;
+    margin: 100px 0;
+
+  }
+
+
+}
+
+.coment {
+  position: relative;
+  height: 150vh;
+  display: flex;
+
+  .videobox {
+    width: 50%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+
+
+    video {
+
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+
+    }
+
+  }
+
+
+
+  .textbox {
+
+
+    width: 50%;
+    height: 150vh;
+    background-color: rgba(255, 255, 255, 0.7);
+
+
+    .OH {
+      overflow: hidden;
+    }
+
+    .txtinnerbox {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      text-align: center;
+      margin-left: 7%;
+      justify-content: center;
+
+
+      p {
+        transform: translate3d(0px, 200%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+        font-weight: 500;
+      }
+
+      p.visible {
+        transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+        font-weight: 500;
+      }
+    }
+
+
+
+
+
+
+    .pbox {
+      display: flex;
+
+      p {
+        font-size: 2.5rem;
+
+        transition: all 0.9s;
+      }
+    }
+
+    #t1 {
+
+
+      transition: all 1.5s;
+
+
+      font-size: 2rem;
+      text-align: left;
+      line-height: 259%;
+    }
+
+
+  }
+
+
+
+}
+
+.introduce {
+  H3 {
+    font-size: 2.5rem;
+    padding-top: 10px;
+    font-weight: 800;
+  }
+
+  margin-top: 150px;
+  text-align: center;
+  position: relative;
+  height: 1150px;
+
+  #puzzle-container {
+    position: relative;
+    width: 50%;
+  }
+
+  #pieces,
+  #slots {
+    display: flex;
+  }
+
+  #pieces {
+    position: absolute;
+    top: 90px;
+    left: 269px;
+  }
+
+  .puzzle-piece {
+    width: 200px;
+    height: 200px;
+    cursor: grab;
+    position: relative; // 드롭 전 기본 위치
+    z-index: 1; // 기본 z-index
+    user-select: none; // 텍스트 선택 방지
+    :hover{transform: scale(1.2);}
+
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: auto; // 이미지가 드래그 이벤트를 방해하지 않도록
+
+
+    }
+
+  }
+
+  #slots {
+    position: relative;
+    top: 299px;
+    left: 233px;
+    height: 50%;
+  }
+
+  .puzzle-slot {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+
+    &:nth-child(1) {
+      left: 241px;
+      top: 47px;
+
+      img {
+        width: 200px;
+        height: auto;
+      }
+    }
+
+    &:nth-child(2) {
+      left: 391px;
+      top: 81px;
+
+      img {
+        height: 200px;
+        width: auto;
+      }
+    }
+
+    &:nth-child(3) {
+      top: 229px;
+      left: 423px;
+
+      img {
+        width: 200px;
+        height: auto;
+      }
+    }
+
+    &:nth-child(4) {
+      top: 264px;
+      left: 211px;
+
+      img {
+        height: 200px;
+        width: auto;
+      }
+    }
+  }
+
+  #modal {
+    padding-left: 20px;
+    position: absolute;
+    right: 18%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 604px;
+
+    background: white;
+    padding: 20px;
+    display: none;
+    color: #333333;
+    line-height: 180%;
+    font-size: 1.2rem;
+    text-align: left;
+
+    #description {
+      text-align: center;
+
+      h4 {
+        color: rgb(95, 156, 248);
+        font-size: 1.7rem
+      }
+
+      ;
+    }
+  }}
+
+#complete {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0s linear 1s;
+  position: absolute;
+  bottom: -311px;
+  left: 32%;
+  font-size: 4.5rem;
+  font-weight: 100;
+}
+
+#complete.show {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+
+
+#modal-content {
+  .txtbox {
+    margin-left: 60px;
+    font-size: 1.3rem;
+  }
+
+  .imgbox {
+    text-align: center;
+    margin-bottom: 20px;
+
+    img {
+      width: 343px;
+    }
+  }
+}
+
+.project {
+  margin-bottom: 300px;
+  text-align: center;
+
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+
+  .arrybox1 {
+    width: 100%;
+    overflow: hidden; // 슬라이드가 밖으로 튀어나오지 않도록
+  }
+
+  .arry {
+    display: flex;
+    justify-content: space-around;
+    width: 200%;
+    animation: slideLeft 10s linear infinite alternate; // 애니메이션 
+    animation-play-state: running;
+  }
+
+  .arry:hover {
+    animation-play-state: paused; // 호버 시 일시정지
+  }
+
+  .projectbox {
+    width: 15%;
+
+    h4 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 150%;
+      margin-top: 50px;
+      text-align: left;
+      color: #333333;
+      margin-left: 20px;
+    }
+  }
+
+  .projects {
+    width: 100%;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+    border: solid 0.1px #a8a8a8;
+
+    // margin: 1%;
+    &:hover .hoverbox {
+      display: block;
+    }
+
+    &:hover .imgbox img {
+      transform: translateY(-60%);
+    }
+
+    img {
+      width: 100%;
+      transition: transform 6s ease;
+    }
+
+
+
+  }
+
+  .hoverbox {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 101%;
+    height: 101%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    ;
+
+    
+  }
+  .buttonbox {
+      position: absolute;
+  
+    top: 50%;
+    left: 50%;
+      transform: translate(-50%, -50%);
+    
+
+    button {
+      margin: 15px;
+      width: 100px;
+      height: 50px;
+      font-size: 1.1rem;
+      border: none;
+      background-color: rgb(95, 156, 248);
+      color: aliceblue;
+      z-index: 5;
+     :hover{transform: scale(1.2);}
+    }}
+
+  .skill {
+    margin: 50px;
+
+    img {
+      width: 90px;
+    }
+  }
+}
+
+.Closing {
+  height: 140VH;
+
+  position: relative;
+
+
+  .Closinginnerbox {
+    height: 140vh;
+
+
+  }
+
+  .textbox {
+
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 142PX;
+
+
+
+
+    p {
+      transform: translate3d(0px, 0PX, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      transform-style: preserve-3d;
+      transition: all 0.5s ease;
+      font-size: 3rem;
+    }
+
+    p.visible {
+      transform: translate3d(100px, 0PX, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+      transform-style: preserve-3d;
+      font-size: 3rem;
+    }
+
+  }
+}
+
+footer {
+  padding: 50px;
+
+  .copy {
+    text-align: right;
+  }
+
+
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%); // 필요한 만큼 이동
+  }
+}

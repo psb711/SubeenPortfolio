@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <title>Page Title</title>
+
+
+    <style>
+      * {margin:0; padding:0;}
+      ul,li,ol {list-style:none; margin:0; padding:0;}
+      a {text-decoration:none; }
+
+      #contents > div {height: 100vh; padding: 10px;}
+      #contents h1 {text-align:center; margin-top: 100px; font-size: 80px; }
+
+      /* section */
+      #section1 {background:purple;}
+      .s1 {transform: translateX(-500px); transition: all 5s; opacity: 0;}
+
+      #section2 {background:tomato;}
+      .s2 {transform: translateX(300px); transition: all 2s; opacity: 0;}
+
+      #section3 {background:gold;}
+      .s3 {transform: translateY(100px); transition: all 3s; opacity: 0;}
+
+      #section4 {background:cyan;}
+      .s4 {transform: translateY(-100px); transition: all 2s; opacity: 0;}
+
+      #section5 {background:yellowgreen;}
+      .s5 {transform: translate(-500px,-100px); transition: all 3s; opacity: 0;}
+
+      #section6 {background:orange;}
+      .s6 {transform: translate(300px,-100px); transition: all 2s; opacity: 0;}
+
+    </style>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+
+    <script>
+      $(function(){
+        // 왼쪽에서
+        $('.s1').css("transform","translateX(0px)").css("opacity","1");
+        
+        $(window).scroll(function(){
+          var ws=$(this).scrollTop();
+          // 오른쪽에서
+          var s2=$('.s2').offset().top;
+          if(ws>s2-700){
+            $('.s2').css("transform","translateX(0px)").css("opacity","1");
+          }
+          // 아래에서
+          var s3=$('.s3').offset().top;
+          if(ws>s3-700){
+            $('.s3').css("transform","translateY(0px)").css("opacity","1");
+          }
+          // 위에서
+          var s4=$('.s4').offset().top;
+          if(ws>s4-700){
+            $('.s4').css("transform","translateY(0px)").css("opacity","1");
+          }
+          // 왼쪽위에서
+          var s5=$('.s5').offset().top;
+          if(ws>s5-700){
+            $('.s5').css("transform","translate(0px,0px)").css("opacity","1");
+          }
+          // 오른쪽위에서
+          var s6=$('.s6').offset().top;
+          if(ws>s6-700){
+            $('.s6').css("transform","translate(0px,0px)").css("opacity","1");
+          }
+        });
+      });
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="contents">
+      <div id="section1"><h1 class="s1">Intro</h1></div>
+      <div id="section2"><h1 class="s2">Skill</h1></div>
+      <div id="section3"><h1 class="s3">Coding</h1></div>
+      <div id="section4"><h1 class="s4">Design</h1></div>
+      <div id="section5"><h1 class="s5">About</h1></div>
+      <div id="section6"><h1 class="s6">Contact</h1></div>
+    </div>
+
+  </body>
+
+</html>

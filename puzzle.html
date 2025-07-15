@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>퍼즐 모달 예제</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+
+    #puzzle-container {
+      display: flex;
+      gap: 50px;
+    }
+
+    #pieces, #slots {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .puzzle-piece {
+      width: 100px;
+      height: 100px;
+      background: lightcoral;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+      cursor: grab;
+      border-radius: 8px;
+    }
+
+    .puzzle-slot {
+      width: 100px;
+      height: 100px;
+      background: #ddd;
+      border: 2px dashed #999;
+      border-radius: 8px;
+    }
+
+    #modal {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 300px;
+      height: 100vh;
+      background: white;
+      border-left: 2px solid #aaa;
+      padding: 20px;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+      display: none;
+    }
+
+    #modal-content #close-modal {
+      cursor: pointer;
+      float: right;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🧩 퍼즐 맞추기</h2>
+
+<div id="puzzle-container">
+  <div id="pieces">
+    <div class="puzzle-piece" draggable="true" data-id="1">조각1</div>
+    <div class="puzzle-piece" draggable="true" data-id="2">조각2</div>
+    <div class="puzzle-piece" draggable="true" data-id="3">조각3</div>
+    <div class="puzzle-piece" draggable="true" data-id="4">조각4</div>
+  </div>
+
+  <div id="slots">
+    <div class="puzzle-slot" data-accept="1"></div>
+    <div class="puzzle-slot" data-accept="2"></div>
+    <div class="puzzle-slot" data-accept="3"></div>
+    <div class="puzzle-slot" data-accept="4"></div>
+  </div>
+</div>
+
+<!-- 모달 -->
+<div id="modal">
+  <div id="modal-content">
+    <span id="close-modal">&times;</span>
+    <div id="description">설명이 여기에 나옵니다.</div>
+  </div>
+</div>
+
+<script>
+  const descriptions = {
+    1: "첫 번째 퍼즐: 어린 시절의 경험",
+    2: "두 번째 퍼즐: 배운 가치관",
+    3: "세 번째 퍼즐: 나의 성격",
+    4: "네 번째 퍼즐: 현재의 나"
+  };
+
+  const pieces = document.querySelectorAll('.puzzle-piece');
+  const slots = document.querySelectorAll('.puzzle-slot');
+  const modal = document.getElementById('modal');
+  const descriptionBox = document.getElementById('description');
+  const closeModal = document.getElementById('close-modal');
+
+  let draggedId = null;
+
+  pieces.forEach(piece => {
+    piece.addEventListener('dragstart', () => {
+      draggedId = piece.dataset.id;
+    });
+  });
+
+  slots.forEach(slot => {
+    slot.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    });
+
+    slot.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const acceptedId = slot.dataset.accept;
+
+      if (acceptedId === draggedId) {
+        const piece = document.querySelector(`.puzzle-piece[data-id='${draggedId}']`);
+        slot.appendChild(piece);
+        piece.setAttribute('draggable', 'false');
+
+        // 모달 열기
+        descriptionBox.innerText = descriptions[draggedId];
+        modal.style.display = 'block';
+      } else {
+        alert("틀린 위치입니다! 다시 시도하세요.");
+      }
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
